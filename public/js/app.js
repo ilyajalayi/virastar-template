@@ -73,12 +73,17 @@ swm.addEventListener('click',()=>{
 })
 
 
-
+var multe = false;
 function mult (e) {
 
-        e.parentNode.classList.toggle('mult')
+        if(multe){
+          e.parentNode.classList.replace('mult','close')
+          
+        }else{
+          e.parentNode.classList.replace('close','mult')
+        }
 
-
+multe = !multe;
     
 }
 

@@ -1,20 +1,32 @@
 /* add font vazirmatn in the site */
 @font-face {
   font-family: 'v';
-  src: url('../font/Vazir.eot'); /* IE9 Compat Modes */ 
-  src: url('../font/Vazir.eot') format('embedded-opentype'), /* IE6-IE8 */
-       url('../font/Vazir.woff2') format('woff2'), /* Super Modern Browsers */ 
-       url('../font/Vazir.woff') format('woff'), /* Pretty Modern Browsers */
-       url('../font/Vazir.ttf')  format('truetype'); /* Safari, Android, iOS */
+  src: url('../font/Vazir.eot');
+  /* IE9 Compat Modes */
+  src: url('../font/Vazir.eot') format('embedded-opentype'),
+    /* IE6-IE8 */
+    url('../font/Vazir.woff2') format('woff2'),
+    /* Super Modern Browsers */
+    url('../font/Vazir.woff') format('woff'),
+    /* Pretty Modern Browsers */
+    url('../font/Vazir.ttf') format('truetype');
+  /* Safari, Android, iOS */
 }
 
-*{
+* {
   font-family: 'v';
 }
 
-.mult .more{
-display: none;
+.mult .more {
+  display: flex !important;
+  animation: show .3s linear ;
 }
+
+.close .more {
+  animation: show .3s linear reverse;
+  display: none !important;
+}
+
 
 
 /* menu btn hamber css code */
@@ -89,3 +101,18 @@ display: none;
   transform: rotate(-90deg);
 }
 
+.text-shadow-cyan {
+  text-shadow: 0px 0px 10px cyan;
+}
+.group:hover .animshow{
+  display: flex !important;
+  animation: show .3s linear;
+}
+@keyframes show {
+  0%{
+    opacity: 0;
+  }
+  100%{
+    opacity: 1;
+  }
+}
