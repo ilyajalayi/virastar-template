@@ -223,11 +223,25 @@
         </div>
       </div>
 </div>
-    
+
+
+
+<!-- 
+    if respanse 404(notfend) : msg display:block and post viwe display:none
+    if respanse 200(ok) : msg display:none and post viwe display:flex
+ -->
+
+            <!-- msg page notfend -->
+<div class="container mx-auto hidden"><!--this div block if respanse 404(notfend) -->
+            <div class="w-[95%] mx-auto mt-20 mb-24 cursor-pointer bg-slate-300 dark:bg-2dark rounded-3xl dark:text-white text-5xl max-lg:text-4xl min-h-60 flex justify-center items-center ring-2 ring-cyan-400 max-sm:text-3xl max-400:text-[22px] max-350:text-[18px]">
+                <h2 class="animate-bounce">گشتم نبود ، نگرد نیست !</h2>
+            </div>
+</div>
+
 <!-- post viwe -->
 
-<div class="container mx-auto flex justify-center items-center mt-10">
-    <div class="w-[95%]">
+<div class=" container mx-auto justify-center items-center mt-10"><!--this div flex if respanse 200(ok) -->
+    <div class="w-[95%] mx-auto">
             <div class="flex items-center justify-center mb-6 ">
         
         <h1 class="text-biscay-700 dark:text-white line-clamp-1 text-[300%] max-xl:text-[250%] max-lg:text-[200%] max-500:text-[150%] font-bold text-shadow-cyan text-2dark px-3" id="articles-page">آرشیو مقالات</h1>
@@ -254,69 +268,89 @@
     </div>
 
     <div class="mt-36 max-xl:mt-48 max-sm:mt-48 max-lg:mt-36">
-        <div class="grid  xl:grid-cols-3 lg:grid-cols-2 sm:grid-cols-2 grid-cols-1 gap-8 relative">
-                                            
-<div class="w-full cursor-pointer bg-slate-300 dark:bg-2dark rounded-3xl  relative flex justify-center group transition-colors delay-100">
-    <div class="w-full absolute -top-[5rem] max-sm:-top-28 max-xl:-top-28 max-lg:-top-[3rem] px-5 max-400:-top-20 max-350:-top-[4rem]">
-        <div class="w-full h-60 max-xl:h-80 max-sm:h-[21rem] max-lg:h-52 overflow-hidden rounded-3xl max-400:h-[15rem] max-350:h-[14rem]">
-            <img class="w-full h-full object-cover  group-hover:scale-110 transition-transform delay-75" src="img/2.webp" alt="">
-        </div>
-    </div>
-    <div>
-        <div class="flex items-end flex-col mb-1 max-400:pt-[11.5rem] pt-[11.5rem] max-sm:pt-[15.5rem] max-xl:pt-[14.5rem] max-lg:pt-[11.5rem] p-2 dark:text-white">
-            <h2 class="z-50 mb-4 w-full flex justify-center items-center max-2xl:text-[20px] text-[22px] max-lg:text-[18px] max-md:text-[16px] font-bold max-sm:text-[22px] line-clamp-1 max-450:text-[18px] max-350:text-[15px] " >رعایت ادب نشانه احترام است</h2>                        
-                 <div class="flex justify-center items-center flex-col">
-                    <div class="flex flex-row w-full"><img src="img/logo.webp" class="rounded-full ring-2 ring-cyan-400 w-[3.2rem] h-[3.2rem] max-md:w-[3rem] max-md:h-[3rem] max-450:h-12 max-450:w-12" alt="">
-                        <div class="flex flex-col justify-center items-start mr-3 max-450:text-[13px]">
-                            <h2>ویرگول</h2><h3>3 ماه پیش</h3>
-                        </div>
-                        <div class="text-white">
-                            <!-- 
-                                if follow btn display flex : follow visible
-                                if follow btn display none : follow hidden
-                                if followed btn display flex : followed visible
-                                if followed btn display none : followed hiden  
-                             -->
-                            <div class="flex items-center justify-center p-3 mr-3 bg-blue-600 hover:scale-110 transition-all delay-75 rounded-full">
-                                دنبال کردن
-                            </div>
-                            <div class="hidden items-center justify-center p-3 mr-3 bg-green-400 hover:scale-110 transition-all delay-75 rounded-full">
-                                دنبال میکنید
-                            </div>
-                        </div>
-                        </div>
 
-                        <div class="flex flex-row justify-between w-full px-1 mt-4">
-                            <div class="flex *:mr-1">
-                                <div title="1 : تعداد نظرات" class="bg-green-400 p-1 px-3 hover:scale-110 transition-all delay-75 justify-center flex items-center  rounded-full  ">
-                                   <i class="far fa-comments ml-[.05rem] " aria-hidden="true"></i>
-                                   <span class="pt-[3px]">1</span>
-                                </div>
-                                <div title="تعداد پسند : 1" class="bg-red-500  p-1 px-3 hover:scale-110 transition-all delay-75 justify-center flex items-center  rounded-full  ">
-                                <i class="far fa-heart ml-[.05rem] " aria-hidden="true"></i>
-                                <span class="pt-[3px]">1</span>
-                             </div></div>
-                             <div title="مدت زمان خواندن این پست حدودا 1 دقیقه است" class="bg-gray-500 ml-1 p-1 px-3 hover:scale-110 transition-all delay-75 justify-center flex items-center  rounded-full  ">
-                                <i class="far fa-watch ml-[.05rem] " aria-hidden="true"></i>
-                                <span class="pt-[3px]">1</span>
+
+        <div id="box-posts" class="grid  xl:grid-cols-3 lg:grid-cols-2 sm:grid-cols-2 grid-cols-1 gap-8 relative">
+     
+            <!-- single post -->
+            <div class="w-full mb-24 cursor-pointer bg-slate-300 dark:bg-2dark rounded-3xl  relative flex justify-center group transition-colors delay-100">
+                <div class="w-full absolute -top-[5rem] max-sm:-top-28 max-xl:-top-28 max-lg:-top-[3rem] px-5 max-400:-top-20 max-350:-top-[4rem]">
+                    <div class="w-full h-60 max-xl:h-80 max-sm:h-[21rem] max-lg:h-52 overflow-hidden rounded-3xl max-400:h-[15rem] max-350:h-[14rem]">
+                        <img class="w-full h-full object-cover  group-hover:scale-110 transition-transform delay-75" src="img/2.webp" alt="">
+                    </div>
+                </div>
+                <div>
+                    <div class="flex items-end flex-col mb-1 max-400:pt-[11.5rem] pt-[11.5rem] max-sm:pt-[15.5rem] max-xl:pt-[14.5rem] max-lg:pt-[11.5rem] p-2 dark:text-white">
+                        <h2 class="z-50 mb-4 w-full flex justify-center items-center max-2xl:text-[20px] text-[22px] max-lg:text-[18px] max-md:text-[16px] font-bold max-sm:text-[22px] line-clamp-1 max-450:text-[18px] max-350:text-[15px] " >رعایت ادب نشانه احترام است</h2>                        
+                             <div class="flex justify-center items-center flex-col">
+                                <div class="flex flex-row w-full"><img src="img/logo.webp" class="rounded-full ring-2 ring-cyan-400 w-[3.2rem] h-[3.2rem] max-md:w-[3rem] max-md:h-[3rem] max-450:h-12 max-450:w-12" alt="">
+                                    <div class="flex flex-col justify-center items-start mr-3 max-450:text-[13px]">
+                                        <h2>ویرگول</h2><h3>3 ماه پیش</h3>
+                                    </div>
+                                    <div class="text-white">
+                                        <!-- 
+                                            if follow btn display flex : follow visible
+                                            if follow btn display none : follow hidden
+                                            if followed btn display flex : followed visible
+                                            if followed btn display none : followed hiden  
+                                         -->
+                                        <div class="flex items-center justify-center p-3 mr-3 bg-blue-600 hover:scale-110 transition-all delay-75 rounded-full">
+                                            دنبال کردن
+                                        </div>
+                                        <div class="hidden items-center justify-center p-3 mr-3 bg-green-400 hover:scale-110 transition-all delay-75 rounded-full">
+                                            دنبال میکنید
+                                        </div>
+                                    </div>
+                                    </div>
+            
+                                    <div class="flex flex-row justify-between w-full px-1 mt-4">
+                                        <div class="flex *:mr-1">
+                                            <div title="1 : تعداد نظرات" class="bg-green-400 p-1 px-3 hover:scale-110 transition-all delay-75 justify-center flex items-center  rounded-full  ">
+                                               <i class="far fa-comments ml-[.05rem] " aria-hidden="true"></i>
+                                               <span class="pt-[3px]">1</span>
+                                            </div>
+                                            <div title="تعداد پسند : 1" class="bg-red-500  p-1 px-3 hover:scale-110 transition-all delay-75 justify-center flex items-center  rounded-full  ">
+                                            <i class="far fa-heart ml-[.05rem] " aria-hidden="true"></i>
+                                            <span class="pt-[3px]">1</span>
+                                         </div></div>
+                                         <div title="مدت زمان خواندن این پست حدودا 1 دقیقه است" class="bg-gray-500 ml-1 p-1 px-3 hover:scale-110 transition-all delay-75 justify-center flex items-center  rounded-full  ">
+                                            <i class="far fa-watch ml-[.05rem] " aria-hidden="true"></i>
+                                            <span class="pt-[3px]">1</span>
+                                         </div>
+                                    </div>
                              </div>
-                        </div>
-                 </div>
-             </div>
+                         </div>
+                </div>
+            </div>
+
+
+            
+        </div>
+                                                  <!-- load more!!! -->
+
+
+
+    </div>
     </div>
 </div>
-
-
-                                                  </div>
-                                                  <!-- load more!!! -->
-                                    <div class="mb-12 flex justify-center"></div>
+                                    <div id="box-more" class="mb-12 flex justify-center"></div>
         
 
-
-    </div>
-    </div>
-</div>
-
+                                    <div id="loading-more" class=" hidden more fixed top-0 left-0 h-screen w-screen bg-biscay-700 bg-opacity-10 backdrop-filter backdrop-blur-sm  items-center justify-center z-[100]">
+                                        <div class="absolute top-0    right-0 w-full h-full flex items-center justify-center">
+                                    
+                                      <svg class="max-xl:w-[20%] max-lg:w-[30%] max-sm:w-50%] w-[15%]" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="25 25 50 50">
+                                    
+                                        <circle class="stroke-current text-cyan-400 text-opacity-30" cx="50" cy="50" r="20" fill="none" stroke-width="8" stroke-linecap="round" stroke-dashoffset="0" stroke-dasharray="200, 300">
+                                    
+                                        </circle>
+                                        <circle class="stroke-current text-cyan-400" cx="50" cy="50" r="20" fill="none" stroke-width="8" stroke-linecap="round" stroke-dashoffset="0" stroke-dasharray="100, 200">
+                                          <animateTransform attributeName="transform" attributeType="XML" type="rotate" from="0 50 50" to="360 50 50" dur="2.5s" repeatCount="indefinite"></animateTransform>
+                                          <animate attributeName="stroke-dashoffset" values="0;-30;-124" dur="1.25s" repeatCount="indefinite"></animate>
+                                          <animate attributeName="stroke-dasharray" values="0,200;110,200;110,200" dur="1.25s" repeatCount="indefinite"></animate>
+                                        </circle>
+                                      </svg>
+                                    </div></div>
 
 
           <footer class="relative z-[1] container mx-auto mt-24 ">

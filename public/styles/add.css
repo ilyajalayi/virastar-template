@@ -21,7 +21,10 @@
   display: flex !important;
   animation: show .3s linear ;
 }
-
+.load {
+  display: flex !important;
+  animation: show .3s linear ;
+}
 .close .more {
   animation: show .3s linear reverse;
   display: none !important;
